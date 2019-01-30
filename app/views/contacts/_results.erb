@@ -1,0 +1,31 @@
+<table class="table table-striped">
+ <thead class="thead-default">
+   <tr>
+     <th>Name</th>
+     <th>Company Name</th>
+     <th>Office Number</th>
+     <th>Mobile Number</th>
+     <th>Home Number</th>
+     <th>Address</th>
+     <th>Email</th>
+   </tr>
+ </thead>
+ <tbody>
+   <%= puts "vaiiiiiiiiii: " + contacts.count.to_s  %>
+
+   <% contacts.each do |contact| %>
+   <tr>
+     <td><%= link_to "#{contact.name}", contact_path(contact) %></td>
+     <td><%= contact.company_name %>
+     <td><%= contact.office_number %></td>
+     <td><%= contact.mobile_number %></td>
+     <td><%= contact.home_number %></td>
+     <td><%= contact.address %></td>
+     <td><%= contact.email %></td>
+   </tr>
+   <% end %>
+ </tbody>
+</table>
+<%= puts "resulttttttttttttttttttttttttttttttttt: " + contacts.count.to_s  %>
+<%= #will_paginate @contacts
+%>

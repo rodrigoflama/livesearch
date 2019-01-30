@@ -1,0 +1,5 @@
+<%= search_form_for(@q, url: "/contacts", method: :get, id: "contacts_search", remote: true) do |f| %>
+ <%= f.search_field :name_cont, placeholder: 'Search...', class: 'form-control' %>
+ <%= f.submit %>
+ <%= puts "search .........." %>
+<% end %>
