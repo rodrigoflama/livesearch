@@ -8,8 +8,6 @@ class ContactsController < ApplicationController
     @q = Contact.ransack(params[:q])
     @contacts = @q.result(distinct: true).order("name asc").paginate(:page => params[:page], :per_page => 20)
 
-    puts "indexxxxxxxxxxxxxxxxxxxxxxxx" +@contacts.count.to_s
-
     respond_to do |format|
       format.html
       format.js  {render "index", :locals => {:contacts => @contacts}}

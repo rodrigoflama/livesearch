@@ -1,5 +1,3 @@
-<%= #link_to "New Contact", '#contact-modal', data: {toggle: "modal", target: "#contact-modal" }, class: 'btn btn-info btn-sm'
-%>
 <%= link_to 'New Contact', new_contact_path, :id=>"New Contact", :class=>"btn btn-sm btn-primary pull-left m-t-n-xs font-bold" %>
 <%= #render 'shared/contact_modal'
 %>
@@ -12,6 +10,10 @@
 </div>
 
 <script>
-  $("#search").html("<%=j render :partial => 'contacts/search' %>")
-  $("#results").html("<%=j render :partial => 'contacts/results', locals: {contacts: @contacts} %>")
+  $(document).ready(function() {
+      $("#contacts_search input").keyup(function() {
+        $.get($("#contacts_search").attr("action"), $("#contacts_search").serialize(), null, "script");
+       return false;
+      });
+  });
 </script>

@@ -11,8 +11,6 @@
    </tr>
  </thead>
  <tbody>
-   <%= puts "vaiiiiiiiiii: " + contacts.count.to_s  %>
-
    <% contacts.each do |contact| %>
    <tr>
      <td><%= link_to "#{contact.name}", contact_path(contact) %></td>
@@ -26,6 +24,3 @@
    <% end %>
  </tbody>
 </table>
-<%= puts "resulttttttttttttttttttttttttttttttttt: " + contacts.count.to_s  %>
-<%= #will_paginate @contacts
-%>
